@@ -26,7 +26,7 @@ public class LoginController {
         User user = userRepository.findByEmail(email);
 
         if (user != null && user.getPassword().equals(password)) {
-            return "redirect:/";
+            return "redirect:/blogs";
         }
 
         return "login";

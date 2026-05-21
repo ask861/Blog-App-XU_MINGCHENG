@@ -1,26 +1,33 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>ブログ編集・削除</title>
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <title>ブログ編集</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-  <div class="container">
-    <h1>ブログ編集・削除</h1>
 
-    <form action="#" method="post" class="form-box">
-      <label>タイトル</label>
-      <input type="text" name="title" value="サンプルタイトル">
+<h1>ブログ編集</h1>
 
-      <label>本文</label>
-      <textarea name="content" rows="8">サンプル本文です。</textarea>
+<form th:action="@{/blog/update}" th:object="${blog}" method="post">
 
-      <button type="submit">更新</button>
-      <button type="button" class="delete-btn">削除</button>
-    </form>
+    <input type="hidden" th:field="*{id}">
 
-    <p><a href=" ">ブログ一覧へ</a ></p >
-  </div>
+    <div>
+        <label>タイトル：</label>
+        <input type="text" th:field="*{title}">
+    </div>
+
+    <div>
+        <label>本文：</label>
+        <textarea th:field="*{content}"></textarea>
+    </div>
+
+    <button type="submit">更新</button>
+
+</form>
+
+<a href=" ">一覧へ戻る</a >
+
 </body>
 </html>

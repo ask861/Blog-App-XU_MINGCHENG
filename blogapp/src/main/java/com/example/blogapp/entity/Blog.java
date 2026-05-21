@@ -38,4 +38,14 @@ public class Blog {
     public void setContent(String content) {
         this.content = content;
     }
+
+	public Blog(String title, String content) {
+		super();
+		this.title = title;
+		this.content = content;
+	}
+
+	public Blog() {
+		super();
+	}
 }

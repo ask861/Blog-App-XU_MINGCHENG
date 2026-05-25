@@ -50,6 +50,9 @@ Spring Bootを使用して開発した個人用ブログアプリです。ユー
 - ログイン画面
 - 投稿一覧画面
 - 記事投稿フォーム
+### 会員登録画面
+![会員登録画面](images/register-page.png)
+
 ### ログイン画面
 ![ログイン画面](images/login-page.png)
 
@@ -58,9 +61,6 @@ Spring Bootを使用して開発した個人用ブログアプリです。ユー
 
 ### 記事投稿フォーム
 ![記事投稿フォーム](images/blog-form-page.png)
-
-### 会員登録画面
-![会員登録画面](images/register-page.png)
 
 ### ブログ編集画面
 ![ブログ編集画面](images/blog-edit-page.png)

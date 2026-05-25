@@ -13,8 +13,8 @@ import com.example.blogapp.repository.BlogRepository;
 
 @Controller
 public class PageController {
-	 @Autowired
-	    private BlogRepository blogRepository;
+	@Autowired
+	private BlogRepository blogRepository;
 //    @GetMapping("/")
 //    public String index() {
 //        return "login";
@@ -30,21 +30,35 @@ public class PageController {
 //        return "register";
 //    }
 
-    @GetMapping("/blogs")
-    public String blogList() {
-        return "blog-list";
-    }
+	// 自己紹介画面
+	@GetMapping("/profile")
+	public String profile(Model model) {
 
-    @GetMapping("/blogs/new")
-    public String blogForm() {
-        return "blog-form";
-    }
+		// 名前
+		model.addAttribute("name", "徐 銘澄");
 
-    @GetMapping("/blog/edit/{id}")
-    public String blogEdit(@PathVariable Long id, Model model) {
-    	Optional<Blog> blogData = blogRepository.findById(id);
-    	model.addAttribute("blog", blogData);
-    	return "blog-edit";
-    }
-   
+		// 自己紹介
+		model.addAttribute("message", "Spring Bootでブログシステムを作成しています。");
+
+		return "profile";
+	}
+	// ブログ一覧画面
+	@GetMapping("/blogs")
+	public String blogList() {
+		return "blog-list";
+	}
+
+	// ブログ登録画面
+	@GetMapping("/blogs/new")
+	public String blogForm() {
+		return "blog-form";
+	}
+	 // ブログ編集画面
+	@GetMapping("/blog/edit/{id}")
+	public String blogEdit(@PathVariable Long id, Model model) {
+		Optional<Blog> blogData = blogRepository.findById(id);
+		model.addAttribute("blog", blogData);
+		return "blog-edit";
+	}
+
 }

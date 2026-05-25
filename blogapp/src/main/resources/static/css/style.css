@@ -1,89 +1,196 @@
+/* 画面全体の設定 */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  background-color: #f4f6f8;
+
+    /* フォント設定 */
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    /* 背景グラデーション */
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    /* 画面高さ */
+    min-height: 100vh;
+
+    /* 外側余白なし */
+    margin: 0;
+
+    /* 中央配置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.container {
-  width: 700px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
+/* タイトル */
 h1 {
-  text-align: center;
-  margin-bottom: 25px;
+
+    /* 文字色 */
+    color: white;
+
+    /* 文字サイズ */
+    font-size: 42px;
+
+    /* 下余白 */
+    margin-bottom: 25px;
+
+    /* 文字間隔 */
+    letter-spacing: 1px;
+
+    /* 文字影 */
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-.form-box {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* フォーム */
+form {
+
+    /* 横幅 */
+    width: 340px;
+
+    /* 内側余白 */
+    padding: 35px;
+
+    /* 角丸 */
+    border-radius: 22px;
+
+    /* 半透明背景 */
+    background: rgba(255, 255, 255, 0.18);
+
+    /* ガラス風ぼかし */
+    backdrop-filter: blur(14px);
+
+    /* 影 */
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+
+    /* 白枠 */
+    border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
+/* ラベル */
 label {
-  font-weight: bold;
+
+    /* 文字色 */
+    color: white;
+
+    /* 太字 */
+    font-weight: bold;
+
+    /* 文字サイズ */
+    font-size: 14px;
 }
 
+/* 入力欄 */
 input,
 textarea {
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  font-size: 16px;
+
+    /* 横幅 */
+    width: 100%;
+
+    /* padding込み */
+    box-sizing: border-box;
+
+    /* 内側余白 */
+    padding: 13px;
+
+    /* 上余白 */
+    margin-top: 7px;
+
+    /* 下余白 */
+    margin-bottom: 18px;
+
+    /* 枠なし */
+    border: none;
+
+    /* 角丸 */
+    border-radius: 12px;
+
+    /* 青枠なし */
+    outline: none;
+
+    /* 背景色 */
+    background: rgba(255, 255, 255, 0.9);
+
+    /* 文字サイズ */
+    font-size: 14px;
 }
 
+/* 入力時 */
+input:focus,
+textarea:focus {
+
+    /* 光る枠 */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.45);
+}
+
+/* ボタン */
 button {
-  margin-top: 15px;
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  background-color: #2f80ed;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+
+    /* 横幅 */
+    width: 100%;
+
+    /* 内側余白 */
+    padding: 13px;
+
+    /* 枠なし */
+    border: none;
+
+    /* 角丸 */
+    border-radius: 12px;
+
+    /* 背景 */
+    background: linear-gradient(135deg, #ffffff, #e8eaff);
+
+    /* 文字色 */
+    color: #5b4fd6;
+
+    /* 文字サイズ */
+    font-size: 16px;
+
+    /* 太字 */
+    font-weight: bold;
+
+    /* マウスカーソル */
+    cursor: pointer;
+
+    /* アニメーション */
+    transition: 0.25s;
 }
 
+/* ボタンホバー */
 button:hover {
-  opacity: 0.8;
+
+    /* 少し浮く */
+    transform: translateY(-2px);
+
+    /* 影 */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 }
 
-.delete-btn {
-  background-color: #eb5757;
-}
-
-p {
-  text-align: center;
-}
-
+/* リンク */
 a {
-  color: #2f80ed;
-  text-decoration: none;
+
+    /* 白文字 */
+    color: white;
+
+    /* 太字 */
+    font-weight: bold;
+
+    /* 下線なし */
+    text-decoration: none;
+
+    /* 上余白 */
+    margin-top: 18px;
 }
 
-.menu {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+/* リンクホバー */
+a:hover {
+
+    /* 下線 */
+    text-decoration: underline;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #ffffff;
+/* 段落 */
+p {
+
+    /* 上余白 */
+    margin-top: 20px;
 }
 
-th,
-td {
-  border: 1px solid #dddddd;
-  padding: 12px;
-  text-align: center;
-}
-
-th {
-  background-color: #eeeeee;
-}

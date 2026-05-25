@@ -3,30 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>会員登録</title>
+  
+  <!-- CSS読み込み -->
   <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
   <h1>会員登録画面</h1>
 
+
+  <!-- 会員登録フォーム -->
   <form th:action="@{/register}" method="post">
+	
+	<!-- ユーザー名入力 -->
     <div>
       <label>ユーザー名</label>
       <input type="text" name="name">
     </div>
-
+	
+	<!-- メールアドレス入力 -->
     <div>
       <label>メールアドレス</label>
       <input type="email" name="email">
     </div>
 
+	<!-- パスワード入力 -->
     <div>
       <label>パスワード</label>
       <input type="password" name="password">
     </div>
 
+
+	<!-- 登録ボタン -->
     <button type="submit">登録</button>
   </form>
 
+
+  <!-- ログイン画面 -->
   <p>
     <a href=" ">ログインはこちら</a >
   </p >

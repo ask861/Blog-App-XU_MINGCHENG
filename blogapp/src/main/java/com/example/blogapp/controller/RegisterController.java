@@ -14,11 +14,12 @@ public class RegisterController {
     @Autowired
     private UserRepository userRepository;
 
+    // 会員登録画面表示
     @GetMapping("/register")
     public String registerForm() {
         return "register";
     }
-
+    // 会員登録処理
     @PostMapping("/register")
     public String register(User user) {
         userRepository.save(user);

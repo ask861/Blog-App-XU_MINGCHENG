@@ -45,7 +45,20 @@ public class BlogController {
 
         return "redirect:/blog/list";
     }
+    // ブログ検索機能
+    @GetMapping("/blog/search")
+    public String searchBlog(
+            @RequestParam String keyword,
+            Model model) {
 
+        model.addAttribute(
+                "blogList",
+                blogRepository.findByTitleContaining(keyword)
+        );
+
+        return "blog-list";
+    }
+    
     // ブログ削除処理
     @GetMapping("/blog/delete/{id}")
     public String deleteBlog(@PathVariable Long id) {

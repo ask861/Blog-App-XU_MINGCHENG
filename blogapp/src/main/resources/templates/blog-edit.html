@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>ブログ編集</title>
+	<!-- CSS読み込み -->
 	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
 <h1>ブログ編集</h1>
-
+<!-- ブログ更新フォーム -->
 <form th:action="@{/blog/update}" th:object="${blog}" method="post">
-
+	<!-- ID保持 -->
     <input type="hidden" th:field="*{id}">
 
+	<!-- タイトル入力 -->
     <div>
         <label>タイトル：</label>
         <input type="text" th:field="*{title}">
     </div>
 
+	<!-- 本文入力 -->
     <div>
         <label>本文：</label>
         <textarea th:field="*{content}"></textarea>
     </div>
-
+	<!-- 更新ボタン -->
     <button type="submit">更新</button>
 
 </form>
 
-<a href=" ">一覧へ戻る</a >
+<!-- 一覧画面へ戻る -->
+<a href="blog/list">一覧へ戻る</a >
 
 </body>
 </html>

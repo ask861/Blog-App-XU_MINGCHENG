@@ -1,36 +1,76 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>ブログ一覧</title>
+	<meta charset="UTF-8">
+	<title>ブログ一覧</title>
+
+	<!-- CSS読み込み -->
 	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
+
 <body>
 
-<h1>ブログ一覧</h1>
+	<h1>ブログ一覧</h1>
 
-<a href="//blog//form">ブログ登録</a >
-<br>
-<a href="/logout">ログアウト</a >
+	<!-- 検索フォーム -->
+	<form action="/blog/search" method="get">
 
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>タイトル</th>
-        <th>本文</th>
-        <th>操作</th>
-    </tr>
+		<input type="text" name="keyword" placeholder="タイトル検索">
 
-    <tr th:each="blog : ${blogList}">
-        <td th:text="${blog.id}"></td>
-        <td th:text="${blog.title}"></td>
-        <td th:text="${blog.content}"></td>
-        <td>
-            <a th:href="@{/blog/edit/{id}(id=${blog.id})}">編集</a >
-            <a th:href="@{/blog/delete/{id}(id=${blog.id})}">削除</a >
-        </td>
-    </tr>
-</table>
+		<button type="submit">検索</button>
+
+	</form>
+
+	<br>
+
+	<!-- メニュー -->
+	<div class="menu">
+
+		<!-- ブログ登録画面 -->
+		<a href="/blog/form">ブログ登録</a>
+
+		<!-- ログアウト -->
+		<a href="/logout">ログアウト</a>
+
+		<!-- 自己紹介画面 -->
+		<a href="/profile">
+			自己紹介
+		</a>
+	</div>
+	
+	<!-- ブログ一覧テーブル -->
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>タイトル</th>
+			<th>本文</th>
+			<th>操作</th>
+		</tr>
+		
+		<!-- ブログ一覧表示 -->
+		<tr th:each="blog : ${blogList}">
+			
+			<!-- ID -->
+			<td th:text="${blog.id}"></td>
+			
+			<!-- タイトル -->
+			<td th:text="${blog.title}"></td>
+			
+			<!-- 本文 -->
+			<td th:text="${blog.content}"></td>
+			
+			<!-- 編集・削除 -->
+			<td>
+				<!-- 編集 -->
+				<a th:href="@{/blog/edit/{id}(id=${blog.id})}">編集</a>
+				
+				<!-- 削除 -->
+				<a th:href="@{/blog/delete/{id}(id=${blog.id})}">削除</a>
+			</td>
+		</tr>
+	</table>
 
 </body>
+
 </html>

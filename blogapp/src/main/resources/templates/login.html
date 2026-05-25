@@ -9,21 +9,27 @@
   <h1>ログイン画面</h1>
 
   <form th:action="@{/login}" method="post">
+	
+	<!-- メールアドレス入力 -->
     <div>
       <label>メールアドレス</label>
       <input type="email" name="email">
     </div>
-
+	
+	<!-- パスワード入力 -->
     <div>
       <label>パスワード</label>
       <input type="password" name="password">
     </div>
 
+
+	<!-- ログインボタン -->
     <button type="submit">ログイン</button>
   </form>
 
+  <!-- 会員登録画面 -->
   <p>
-    <a href=" ">会員登録はこちら</a >
+    <a href="/register">会員登録はこちら</a >
   </p >
 </body>
 </html>

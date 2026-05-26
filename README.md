@@ -168,6 +168,5 @@ src/
 ## 👤 作成者情報
 
 - 氏名：徐 銘澄
-- 所属：ミズトミコンサルティング株式会社
 - 開発言語：Java / Spring Boot
 - GitHub：https://github.com/ask861/Blog-App-XU_MINGCHENG
